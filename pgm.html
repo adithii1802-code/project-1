@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Assignment</title>
+</head>
+<body>
+
+    <h2>Library Assignment</h2>
+
+    <label>Enter Book Name 1:</label>
+    <input type="text" id="book1" oninput="updateBooks()">
+
+    <br><br>
+
+    <label>Enter Book Name 2:</label>
+    <input type="text" id="book2" oninput="updateBooks()">
+
+    <br><br>
+
+    <label>Enter Book Name 3:</label>
+    <input type="text" id="book3" oninput="updateBooks()">
+
+    <h3>Updated Book Details</h3>
+
+    <p id="output1"></p>
+    <p id="output2"></p>
+    <p id="output3"></p>
+
+    <script>
+        function updateBooks() {
+
+            let b1 = document.getElementById("book1").value;
+            let b2 = document.getElementById("book2").value;
+            let b3 = document.getElementById("book3").value;
+
+            document.getElementById("output1").innerHTML =
+                "Book 1: " + b1;
+
+            document.getElementById("output2").innerHTML =
+                "Book 2: " + b2;
+
+            document.getElementById("output3").innerHTML =
+                "Book 3: " + b3;
+        }
+    </script>
+
+</body>
+</html>

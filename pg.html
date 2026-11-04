@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Details Update</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-app="studentApp" ng-controller="studentCtrl">
+
+    <h2>Student Registration Form</h2>
+
+    <!-- Step 1: Name -->
+    <label>Enter Name:</label>
+    <input type="text" ng-model="name">
+
+    <br><br>
+
+    <!-- Step 2: Department -->
+    <label>Select Department:</label>
+    <select id="department">
+        <option value="">Select Department</option>
+        <option value="CSE">Computer Science</option>
+        <option value="ECE">Electronics</option>
+        <option value="ISE">Information Science</option>
+        <option value="ME">Mechanical</option>
+        <option value="Civil">Civil</option>
+    </select>
+
+    <br><br>
+
+    <!-- Step 3: Age -->
+    <label>Enter Age:</label>
+    <input type="number" ng-model="age">
+
+    <br><br>
+
+    <!-- Step 4: Semester -->
+    <label>Select Semester:</label>
+    <select id="semester">
+        <option value="">Select Semester</option>
+        <option value="1st Semester">1st Semester</option>
+        <option value="2nd Semester">2nd Semester</option>
+        <option value="3rd Semester">3rd Semester</option>
+        <option value="4th Semester">4th Semester</option>
+        <option value="5th Semester">5th Semester</option>
+        <option value="6th Semester">6th Semester</option>
+        <option value="7th Semester">7th Semester</option>
+        <option value="8th Semester">8th Semester</option>
+    </select>
+
+    <br><br>
+
+    <!-- Update Button -->
+    <button ng-click="updateDetails()">Update</button>
+
+    <hr>
+
+    <!-- Updated Output -->
+    <h2>Updated Student Details</h2>
+
+    <p><b>Name:</b> {{updatedName}}</p>
+    <p><b>Department:</b> {{updatedDepartment}}</p>
+    <p><b>Age:</b> {{updatedAge}}</p>
+    <p><b>Semester:</b> {{updatedSemester}}</p>
+
+    <script>
+        var app = angular.module("studentApp", []);
+
+        app.controller("studentCtrl", function($scope) {
+
+            $scope.updateDetails = function() {
+
+                // Update Name and Age
+                $scope.updatedName = $scope.name;
+                $scope.updatedAge = $scope.age;
+
+                // Get Department
+                $scope.updatedDepartment =
+                    document.getElementById("department").value;
+
+                // Get Semester
+                $scope.updatedSemester =
+                    document.getElementById("semester").value;
+            };
+
+        });
+    </script>
+
+</body>
+</html>
+
